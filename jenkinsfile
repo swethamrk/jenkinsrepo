@@ -1,18 +1,19 @@
 node {
     
     stage('code download') {
-        git credentialsId: 'git_ks', url: 'https://github.com/swethamrk/demo.git'
+        git credentialsId: 'git_ks', url: 'https://github.com/swethamrk/jenkinsrepo.git'
+
             }
     stage('clean') {
         sh 'mvn clean'
             } 
-	stage('compile') {             
+    stage('compile') {             
 	    sh 'mvn compile'
             } 		
     stage('package') {
         sh 'mvn package'
             } 
-	 stage('deploy') {
+    stage('deploy') {
         sh 'mvn deploy'
             } 		  	    
     }
